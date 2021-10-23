@@ -10,5 +10,5 @@ parts:
   - file: notebooks
 - caption: Überblick 2
   chapters:
-    - file: webscraper_mobile
-    - file: data_cleaning
+  - file: content/webscraper_mobile
+  - file: content/data_cleaning
