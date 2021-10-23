@@ -6,9 +6,9 @@ root: intro
 parts:
 - caption: Überblick
   chapters:
-  - file: webscraper_mobile
   - file: markdown
   - file: notebooks
 - caption: Überblick 2
   chapters:
+    - file: webscraper_mobile
     - file: data_cleaning
