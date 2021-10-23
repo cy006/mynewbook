@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Applied Data Analytics</title>
+    <title>Plan</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Plan" href="plan_restwertermittlung.html" />
+    <link rel="next" title="Webscraper mobile.de" href="content/webscraper_mobile.html" />
+    <link rel="prev" title="Applied Data Analytics" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -84,8 +85,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Applied Data Analytics
   </a>
  </li>
@@ -95,9 +96,9 @@
   Restwertermittlung
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="plan_restwertermittlung.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Plan
   </a>
  </li>
@@ -169,7 +170,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/plan_restwertermittlung.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -189,7 +190,7 @@
                 data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
                     class="fab fa-github"></i>Repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fplan_restwertermittlung.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
         
@@ -216,8 +217,23 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wie-schafft-liefert-und-erfasst-daimler-werte">
-   Wie schafft, liefert und erfasst Daimler Werte?
+  <a class="reference internal nav-link" href="#identifizierung-von-usecases">
+   Identifizierung von Usecases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erste-problemdefinition">
+   Erste Problemdefinition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identifizierung-von-potenziellen-relevanten-variablen">
+   Identifizierung von potenziellen relevanten Variablen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition-der-metriken">
+   Definition der Metriken
   </a>
  </li>
 </ul>
@@ -231,19 +247,54 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="applied-data-analytics">
-<h1>Applied Data Analytics<a class="headerlink" href="#applied-data-analytics" title="Permalink to this headline">¶</a></h1>
-<p>In diesem Projekt werde ich anhand des Data Science Lifecycle-Modells 3 unterschiedliche Use Cases für die Daimler AG umsetzen.
-Hierbei beschäftige ich mich mit der Regression, Klassifikation und dem Clustering.</p>
-<p>Das Business Modell Canvas eignet sich ideal dafür, um interessante Use Cases zu identifizieren. So habe ich die Daimler Ag mit all ihren Bestandteilen durchleuchtet und die Ergebnisse im folgdenen Business Modell Canvas zusammengefasst. Auf dieser Basis erhielt ich einen umfassenden Überblick und ich konnte so mögliche Use Cases identifizieren.</p>
-<div class="section" id="wie-schafft-liefert-und-erfasst-daimler-werte">
-<h2>Wie schafft, liefert und erfasst Daimler Werte?<a class="headerlink" href="#wie-schafft-liefert-und-erfasst-daimler-werte" title="Permalink to this headline">¶</a></h2>
-<p><img alt="Business Model Canvas" src="_images/daimler-business-model-canvas.png" /></p>
-<p>Die Daimler AG gehört mit den Geschäftsfeldern Mercedes Benz Cars &amp; Vans, Daimler Trucks &amp; Buses und Daimler Mobility zu den größten Anbietern von Premiumfahrzeugen. Neben den Premiumfahrzeugen ist die Daimler AG auch einer der größten Hersteller von Nutzfahrzeugen. Mit 288.481 Mitarbeitern und Produktionsstätten auf der ganzen Welt arbeitet Daimler an unterschiedlichsten Themen wie digitale Dienstleistungen, innovative Mobilitätsdienstleistungen, alternative Antriebstechniken und autonomes Fahren.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="plan">
+<h1>Plan<a class="headerlink" href="#plan" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="identifizierung-von-usecases">
+<h2>Identifizierung von Usecases<a class="headerlink" href="#identifizierung-von-usecases" title="Permalink to this headline">¶</a></h2>
+<p><strong>Ermittlung des Restwertes von Leasingrückläufer</strong></p>
+<p><img alt="Daimler Leasing" src="_images/Leasing_daimler.png" /></p>
+<p>Die Daimler AG spricht mit ihren Premiumfahrzeugen vor allem wohlhabende Konsumenten an. Dazu zählen Firmen, Selbstständige und auch Privatfahrer. Um den Kunden mehr Freiheiten zu geben und bei der Wahl des Fahrzeuges flexibler zu sein, bietet Daimler ihren Kunden unterschiedliche Leasingprodukte an.</p>
+<p>Nach Ablauf des Leasingvertrages kehrt das Leasingfahrzeug zum Unternehmen zurück oder es besteht die Möglichkeit für den Kunden am Ende der Vertragslaufzeit das Fahrzeug zu einem bestimmten Preis zu kaufen. In den meisten Fällen ist jedoch ersteres der Fall.</p>
+<p>So gibt es für die Daimler AG viele Leasingrückläufer, die wieder am Markt angeboten werden können. Da das Fahrzeug bereits benutzt wurde, sinkt auch dementsprechend der Wert. An dieser Stelle ist es notwendig ein Gutachten zu erstellen, dass den Restwert des Fahrzeuges ermittelt, um das Fahrzeug mit einem angepassten Preis wieder auf dem Markt anbieten zu können. Nach der Ermittlung des Restwertes landet das Fahrzeug entweder auf dem Gebrauchtwagenmarkt oder es wird unter der Kategorie „Gebrauchtwagen-Leasing“ angeboten.</p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="erste-problemdefinition">
+<h2>Erste Problemdefinition<a class="headerlink" href="#erste-problemdefinition" title="Permalink to this headline">¶</a></h2>
+<p>Ich erforsche die Ermittlung des Restwertes von Leasingrückläufern, weil ich herausfinden möchten, ob ein Model in der Lage ist einen präzisen Restwert des Fahrzeuges zu ermitteln. Darauf basierend möchte ich die Pricing-Experten im Mercedes Benz Handel mit meinem Model unterstützen, um die Komplexität der Restwertermittlung zu verringern und eine schnellere und präzise Preisfindung zu ermöglichen.</p>
+<p><img alt="frame problem leasing" src="_images/frame_problem_leasing.png" /></p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="identifizierung-von-potenziellen-relevanten-variablen">
+<h2>Identifizierung von potenziellen relevanten Variablen<a class="headerlink" href="#identifizierung-von-potenziellen-relevanten-variablen" title="Permalink to this headline">¶</a></h2>
+<p>In diesem Usecase ist es das zentrale Ziel, ein präzises Model zu erstellen, dass den Restwert des Fahrzeugs ermittelt. Damit das Model akkurate Ergebnisse liefert, muss das Model mit einem qualitativ hochwertigen Datensatz trainiert werden. Der Datensatz muss hierfür pro Instanz als abhängige Variable den Preis des Gebrauchtwagens und als unabhängige Variablen die Eigenschaften des Gebrauchtwagens enthalten.</p>
+<p>Um den Wert des Fahrzeugs zu bestimmen, ist es notwendig eine Vielzahl von Faktoren zu berücksichtigen. So sollte man Variablen wie die Herkunft, das Alter des Fahrzeugs, den Kilometerstand, die PS-Anzahl und die Antriebsarten berücksichtigen. Andere Variablen wie Hubraum, Beschleunigung, Anzahl der Türen, Farbe und Ausstattung beeinflussen ebenfalls den Preis des Fahrzeugs (vgl. Arai et al., 2018, S. 415).</p>
+<p>In einem Gespräch mit einem Autohändler wurden neben den genannten Variablen weitere wichtige Variablen genannt. So hat die Anzahl der Fahrzeughalter, der Fahrzeugzustand, die Schadstoffklasse, die Fahrzeugkategorie und das Getriebe ebenfalls einen Einfluss auf den Preis.</p>
+<p>In der folgenden Grafik sind die potenziellen relevanten Variablen zu sehen, die einen Einfluss auf die abhängige Variable „Preis“ haben.</p>
+<p>![car_variablen](images/din4cropped_variablen_car_Zeichenfläche 1.jpg)</p>
+</div>
+<div class="section" id="definition-der-metriken">
+<h2>Definition der Metriken<a class="headerlink" href="#definition-der-metriken" title="Permalink to this headline">¶</a></h2>
+<p><strong>Heuristische Gedanken</strong></p>
+<p>Um erste Metriken für diesen Usecase zu definieren, ist es hilfreich sich zunächst zu überlegen, wie man vorgehen würde, wenn man nicht auf das Model zurückgreifen könnte.</p>
+<p>Wenn man kein Modell verwenden würde, so würde man vermutlich auf Erfahrungswerte setzen und eine Vielzahl von Fahrzeugdaten vergleichen, um den Restwert des Fahrzeugs zu ermitteln. Diese Vorgehensweise ist zu einem sehr aufwendig und zum anderen besteht die Gefahr, dass man durch zu niedrig angesetzte Preise die Gewinne geschmälert werden können. „So mussten die deutschen Automobilhersteller in den USA rund 1 Milliarde Euro Verlust beim Wiederverkauf von 2,2 Millionen Autos, deren Leasingverträge 2008 ausliefen, hinnehmen.“ (Deutsche Presse-Agentur GmbH, 2009).</p>
+<p><strong>Model Problem Definition</strong></p>
+<p>Wir wollen, dass das Modell den Restwert von Leasingrückläufern ermittelt.
+Das ideale Ergebnis ist es, einen präzisen Restwert zu erhalten, sodass die Komplexität bei der Restwertermittlung reduzieren werden kann.
+So könnte man die Kosten bei der Restwertermittlung senken und einen höheren Gewinn durch den präzisen wettbewerbsfähigen Preis erhalten.</p>
+<p><strong>Definition der Erfolgsmetriken</strong></p>
+<p>Erfolgsmetriken:</p>
+<ul class="simple">
+<li><p>Reduzierung der Zeit, die für die Preisermittlung benötigt wird</p></li>
+<li><p>Steigerung des Gewinns durch Leasingrückläufer</p></li>
+</ul>
+<p>Key results (KR):</p>
+<ul class="simple">
+<li><p>Reduzierung der Zeit um 30%, die für die Preisermittlung benötigt wird</p></li>
+<li><p>10% mehr Gewinn durch Leasingrückläufer</p></li>
+</ul>
+<p>Misserfolg des Modells:</p>
+<ul class="simple">
+<li><p>Die Zeit, die für die Preisermittlung benötigt wird, konnte nur um 10% reduziert werden.</p></li>
+<li><p>Der Gewinn durch Leasingrückläufer konnte nur um 5% gesteigert werden.</p></li>
+</ul>
 </div>
 </div>
 
@@ -276,11 +327,20 @@ Hierbei beschäftige ich mich mit der Regression, Klassifikation und dem Cluster
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Applied Data Analytics</p>
+            </div>
+        </a>
+    </div>
      <div id="next">
-        <a class="right-next" href="plan_restwertermittlung.html" title="next page">
+        <a class="right-next" href="content/webscraper_mobile.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Plan</p>
+                <p class="prevnext-title">Webscraper mobile.de</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
