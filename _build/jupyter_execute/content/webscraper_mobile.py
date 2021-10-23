@@ -1,22 +1,11 @@
-Traceback (most recent call last):
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
-    record_timing=False,
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/client.py", line 1117, in execute
-    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/util.py", line 78, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/util.py", line 57, in just_run
-    return loop.run_until_complete(coro)
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
-    return future.result()
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/client.py", line 559, in async_execute
-    cell, index, execution_count=self.code_cells_executed + 1
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/client.py", line 862, in async_execute_cell
-    self._check_raise_for_error(cell, exec_reply)
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Webscraper mobile.de
+
+# In[1]:
+
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys  
 from selenium.webdriver.common.action_chains import ActionChains
@@ -312,17 +301,29 @@ while True:
     break
         
 data.to_csv("07_mobile_data_" + price_minimum + "_" + price_maximum + ".csv", index=False)
-------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/2d/bdyc79kj20qfm2zqrn61_dfw0000gn/T/ipykernel_12438/2420060198.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mfrom[0m [0mselenium[0m [0;32mimport[0m [0mwebdriver[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0;32mfrom[0m [0mselenium[0m[0;34m.[0m[0mwebdriver[0m[0;34m.[0m[0mcommon[0m[0;34m.[0m[0mkeys[0m [0;32mimport[0m [0mKeys[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0;32mfrom[0m [0mselenium[0m[0;34m.[0m[0mwebdriver[0m[0;34m.[0m[0mcommon[0m[0;34m.[0m[0maction_chains[0m [0;32mimport[0m [0mActionChains[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0;32mfrom[0m [0mselenium[0m[0;34m.[0m[0mwebdriver[0m[0;34m.[0m[0mcommon[0m[0;34m.[0m[0mby[0m [0;32mimport[0m [0mBy[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0;32mfrom[0m [0mselenium[0m[0;34m.[0m[0mwebdriver[0m[0;34m.[0m[0msupport[0m[0;34m.[0m[0mui[0m [0;32mimport[0m [0mWebDriverWait[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'selenium'
-ModuleNotFoundError: No module named 'selenium'
+# In[ ]:
+
+
+
+
+
+# In[2]:
+
+
+data = pd.DataFrame(cars)
+data.to_csv("234_mobile_data_" + price_minimum + "_" + price_maximum + ".csv", index=False)
+
+
+# In[3]:
+
+
+data
+
+
+# In[ ]:
+
+
+
 
