@@ -3,9 +3,6 @@
 
 format: jb-book
 root: intro
-parts:
-  - caption: Intro
-    chapters:
-    - file: /Users/cenkyagkan/books/mynewbook/webscraper mobile.de.ipynb
-    - file: markdown
-    - file: notebooks
+chapters:
+- file: markdown
+- file: notebooks
