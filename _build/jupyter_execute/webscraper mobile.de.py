@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Webscraper mobile.de
+
 # In[1]:
 
 
@@ -299,6 +301,12 @@ while True:
     break
         
 data.to_csv("07_mobile_data_" + price_minimum + "_" + price_maximum + ".csv", index=False)
+
+
+# In[ ]:
+
+
+
 
 
 # In[2]:

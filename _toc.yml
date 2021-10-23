@@ -9,3 +9,6 @@ parts:
     - file: markdown
     - file: notebooks
     - file: webscraper mobile.de.ipynb
+  -caption: Scrapper
+    chapters:
+    - file: _build/html/webscraper mobile.de.html
