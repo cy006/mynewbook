@@ -4,11 +4,12 @@
 format: jb-book
 root: intro
 parts:
-- caption: Überblick
+- caption: Restwertermittlung
+  chapters:
+  - file: plan_restwertermittlung
+  - file: content/webscraper_mobile
+  - file: content/data_cleaning
+- caption: Leasingantrag
   chapters:
   - file: markdown
   - file: notebooks
-- caption: Überblick 2
-  chapters:
-  - file: content/webscraper_mobile
-  - file: content/data_cleaning
