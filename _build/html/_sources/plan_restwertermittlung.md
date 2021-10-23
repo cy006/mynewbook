@@ -1,4 +1,4 @@
-# 1. Plan
+# Plan
 
 ### Identifizierung von Usecases
 
