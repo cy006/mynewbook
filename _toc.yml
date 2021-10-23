@@ -8,4 +8,4 @@ parts:
     chapters:
     - file: markdown
     - file: notebooks
-    - file: /cy006/mynewbook/webscraper mobile.de.ipynb
+    - file: webscraper mobile.de.ipynb
