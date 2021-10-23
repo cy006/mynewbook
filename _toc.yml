@@ -6,6 +6,6 @@ root: intro
 parts:
   - caption: Intro
     chapters:
-    - file: mynewbook/_build/html/webscraper mobile.de.html
+    - file: /Users/cenkyagkan/books/mynewbook/webscraper mobile.de.ipynb
     - file: markdown
     - file: notebooks
