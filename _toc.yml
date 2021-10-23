@@ -10,5 +10,3 @@ parts:
   - file: markdown
   - file: notebooks
 - caption: Überblick 2
-  chapters:
-  - file: intro
