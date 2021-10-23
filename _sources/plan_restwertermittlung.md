@@ -28,7 +28,7 @@ In einem Gespräch mit einem Autohändler wurden neben den genannten Variablen w
 
 In der folgenden Grafik sind die potenziellen relevanten Variablen zu sehen, die einen Einfluss auf die abhängige Variable „Preis“ haben.
 
-![car_variablen](images/din4cropped_variablen_car_Zeichenfläche 1.png)
+![car_variablen](images/variablen_car.png)
 
 ### Definition der Metriken
 
