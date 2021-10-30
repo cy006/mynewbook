@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Plan</title>
+    <title>1. Plan Restwertermittlung</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -99,7 +99,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Plan
+   1. Plan Restwertermittlung
   </a>
  </li>
  <li class="toctree-l1">
@@ -115,10 +115,15 @@
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
-  Leasingantrag
+  Leasingrisiko
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plan_leasingrisiko.html">
+   1. Plan Leasingrisiko
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="markdown.html">
    Markdown Files
@@ -247,8 +252,8 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="plan">
-<h1>1. Plan<a class="headerlink" href="#plan" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="plan-restwertermittlung">
+<h1>1. Plan Restwertermittlung<a class="headerlink" href="#plan-restwertermittlung" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="identifizierung-von-usecases">
 <h2>Identifizierung von Usecases<a class="headerlink" href="#identifizierung-von-usecases" title="Permalink to this headline">¶</a></h2>
 <p><strong>Ermittlung des Restwertes von Leasingrückläufer</strong></p>
@@ -259,12 +264,12 @@
 </div>
 <div class="section" id="erste-problemdefinition">
 <h2>Erste Problemdefinition<a class="headerlink" href="#erste-problemdefinition" title="Permalink to this headline">¶</a></h2>
-<p>Ich erforsche die Ermittlung des Restwertes von Leasingrückläufern, weil ich herausfinden möchten, ob ein Model in der Lage ist einen präzisen Restwert des Fahrzeuges zu ermitteln. Darauf basierend möchte ich die Pricing-Experten im Mercedes Benz Handel mit meinem Model unterstützen, um die Komplexität der Restwertermittlung zu verringern und eine schnellere und präzise Preisfindung zu ermöglichen.</p>
+<p>Ich erforsche die Ermittlung des Restwertes von Leasingrückläufern, weil ich herausfinden möchten, ob ein Modell in der Lage ist einen präzisen Restwert des Fahrzeuges zu ermitteln. Darauf basierend möchte ich die Pricing-Experten im Mercedes Benz Handel mit meinem Modell unterstützen, um die Komplexität der Restwertermittlung zu verringern und eine schnellere und präzise Preisfindung zu ermöglichen.</p>
 <p><img alt="frame problem leasing" src="_images/frame_problem_leasing.png" /></p>
 </div>
 <div class="section" id="identifizierung-von-potenziellen-relevanten-variablen">
 <h2>Identifizierung von potenziellen relevanten Variablen<a class="headerlink" href="#identifizierung-von-potenziellen-relevanten-variablen" title="Permalink to this headline">¶</a></h2>
-<p>In diesem Usecase ist es das zentrale Ziel, ein präzises Model zu erstellen, dass den Restwert des Fahrzeugs ermittelt. Damit das Model akkurate Ergebnisse liefert, muss das Model mit einem qualitativ hochwertigen Datensatz trainiert werden. Der Datensatz muss hierfür pro Instanz als abhängige Variable den Preis des Gebrauchtwagens und als unabhängige Variablen die Eigenschaften des Gebrauchtwagens enthalten.</p>
+<p>In diesem Usecase ist es das zentrale Ziel, ein präzises Modell zu erstellen, dass den Restwert des Fahrzeugs ermittelt. Damit das Modell akkurate Ergebnisse liefert, muss das Modell mit einem qualitativ hochwertigen Datensatz trainiert werden. Der Datensatz muss hierfür pro Instanz als abhängige Variable den Preis des Gebrauchtwagens und als unabhängige Variablen die Eigenschaften des Gebrauchtwagens enthalten.</p>
 <p>Um den Wert des Fahrzeugs zu bestimmen, ist es notwendig eine Vielzahl von Faktoren zu berücksichtigen. So sollte man Variablen wie die Herkunft, das Alter des Fahrzeugs, den Kilometerstand, die PS-Anzahl und die Antriebsarten berücksichtigen. Andere Variablen wie Hubraum, Beschleunigung, Anzahl der Türen, Farbe und Ausstattung beeinflussen ebenfalls den Preis des Fahrzeugs (vgl. Arai et al., 2018, S. 415).</p>
 <p>In einem Gespräch mit einem Autohändler wurden neben den genannten Variablen weitere wichtige Variablen genannt. So hat die Anzahl der Fahrzeughalter, der Fahrzeugzustand, die Schadstoffklasse, die Fahrzeugkategorie und das Getriebe ebenfalls einen Einfluss auf den Preis.</p>
 <p>In der folgenden Grafik sind die potenziellen relevanten Variablen zu sehen, die einen Einfluss auf die abhängige Variable „Preis“ haben.</p>
@@ -273,9 +278,9 @@
 <div class="section" id="definition-der-metriken">
 <h2>Definition der Metriken<a class="headerlink" href="#definition-der-metriken" title="Permalink to this headline">¶</a></h2>
 <p><strong>Heuristische Gedanken</strong></p>
-<p>Um erste Metriken für diesen Usecase zu definieren, ist es hilfreich sich zunächst zu überlegen, wie man vorgehen würde, wenn man nicht auf das Model zurückgreifen könnte.</p>
+<p>Um erste Metriken für diesen Usecase zu definieren, ist es hilfreich sich zunächst zu überlegen, wie man vorgehen würde, wenn man nicht auf das Modell zurückgreifen könnte.</p>
 <p>Wenn man kein Modell verwenden würde, so würde man vermutlich auf Erfahrungswerte setzen und eine Vielzahl von Fahrzeugdaten vergleichen, um den Restwert des Fahrzeugs zu ermitteln. Diese Vorgehensweise ist zu einem sehr aufwendig und zum anderen besteht die Gefahr, dass man durch zu niedrig angesetzte Preise die Gewinne geschmälert werden können. „So mussten die deutschen Automobilhersteller in den USA rund 1 Milliarde Euro Verlust beim Wiederverkauf von 2,2 Millionen Autos, deren Leasingverträge 2008 ausliefen, hinnehmen.“ (Deutsche Presse-Agentur GmbH, 2009).</p>
-<p><strong>Model Problem Definition</strong></p>
+<p><strong>Modell Problem Definition</strong></p>
 <p>Wir wollen, dass das Modell den Restwert von Leasingrückläufern ermittelt.
 Das ideale Ergebnis ist es, einen präzisen Restwert zu erhalten, sodass die Komplexität bei der Restwertermittlung reduzieren werden kann.
 So könnte man die Kosten bei der Restwertermittlung senken und einen höheren Gewinn durch den präzisen wettbewerbsfähigen Preis erhalten.</p>
@@ -356,7 +361,7 @@ So könnte man die Kosten bei der Restwertermittlung senken und einen höheren G
         
           Durch Cenk Yagkan<br/>
         
-            &copy; Urheberrechte © 2021.<br/>
+            &copy; Urheberrechte © Cenk Yagkan 2021.<br/>
       </p>
     </div>
   </footer>

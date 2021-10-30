@@ -1,6 +1,6 @@
-# 1. Plan
+# 1. Plan Restwertermittlung
 
-### Identifizierung von Usecases
+## Identifizierung von Usecases
 
 **Ermittlung des Restwertes von Leasingrückläufer**
 
@@ -12,15 +12,15 @@ Nach Ablauf des Leasingvertrages kehrt das Leasingfahrzeug zum Unternehmen zurü
 
 So gibt es für die Daimler AG viele Leasingrückläufer, die wieder am Markt angeboten werden können. Da das Fahrzeug bereits benutzt wurde, sinkt auch dementsprechend der Wert. An dieser Stelle ist es notwendig ein Gutachten zu erstellen, dass den Restwert des Fahrzeuges ermittelt, um das Fahrzeug mit einem angepassten Preis wieder auf dem Markt anbieten zu können. Nach der Ermittlung des Restwertes landet das Fahrzeug entweder auf dem Gebrauchtwagenmarkt oder es wird unter der Kategorie „Gebrauchtwagen-Leasing“ angeboten.
 
-### Erste Problemdefinition
+## Erste Problemdefinition
 
-Ich erforsche die Ermittlung des Restwertes von Leasingrückläufern, weil ich herausfinden möchten, ob ein Model in der Lage ist einen präzisen Restwert des Fahrzeuges zu ermitteln. Darauf basierend möchte ich die Pricing-Experten im Mercedes Benz Handel mit meinem Model unterstützen, um die Komplexität der Restwertermittlung zu verringern und eine schnellere und präzise Preisfindung zu ermöglichen.
+Ich erforsche die Ermittlung des Restwertes von Leasingrückläufern, weil ich herausfinden möchten, ob ein Modell in der Lage ist einen präzisen Restwert des Fahrzeuges zu ermitteln. Darauf basierend möchte ich die Pricing-Experten im Mercedes Benz Handel mit meinem Modell unterstützen, um die Komplexität der Restwertermittlung zu verringern und eine schnellere und präzise Preisfindung zu ermöglichen.
 
 ![frame problem leasing](images/frame_problem_leasing.png)
 
-### Identifizierung von potenziellen relevanten Variablen
+## Identifizierung von potenziellen relevanten Variablen
 
-In diesem Usecase ist es das zentrale Ziel, ein präzises Model zu erstellen, dass den Restwert des Fahrzeugs ermittelt. Damit das Model akkurate Ergebnisse liefert, muss das Model mit einem qualitativ hochwertigen Datensatz trainiert werden. Der Datensatz muss hierfür pro Instanz als abhängige Variable den Preis des Gebrauchtwagens und als unabhängige Variablen die Eigenschaften des Gebrauchtwagens enthalten.
+In diesem Usecase ist es das zentrale Ziel, ein präzises Modell zu erstellen, dass den Restwert des Fahrzeugs ermittelt. Damit das Modell akkurate Ergebnisse liefert, muss das Modell mit einem qualitativ hochwertigen Datensatz trainiert werden. Der Datensatz muss hierfür pro Instanz als abhängige Variable den Preis des Gebrauchtwagens und als unabhängige Variablen die Eigenschaften des Gebrauchtwagens enthalten.
 
 Um den Wert des Fahrzeugs zu bestimmen, ist es notwendig eine Vielzahl von Faktoren zu berücksichtigen. So sollte man Variablen wie die Herkunft, das Alter des Fahrzeugs, den Kilometerstand, die PS-Anzahl und die Antriebsarten berücksichtigen. Andere Variablen wie Hubraum, Beschleunigung, Anzahl der Türen, Farbe und Ausstattung beeinflussen ebenfalls den Preis des Fahrzeugs (vgl. Arai et al., 2018, S. 415).
 
@@ -30,15 +30,15 @@ In der folgenden Grafik sind die potenziellen relevanten Variablen zu sehen, die
 
 ![car_variablen](images/variablen_car.png)
 
-### Definition der Metriken
+## Definition der Metriken
 
 **Heuristische Gedanken**
 
-Um erste Metriken für diesen Usecase zu definieren, ist es hilfreich sich zunächst zu überlegen, wie man vorgehen würde, wenn man nicht auf das Model zurückgreifen könnte.
+Um erste Metriken für diesen Usecase zu definieren, ist es hilfreich sich zunächst zu überlegen, wie man vorgehen würde, wenn man nicht auf das Modell zurückgreifen könnte.
 
 Wenn man kein Modell verwenden würde, so würde man vermutlich auf Erfahrungswerte setzen und eine Vielzahl von Fahrzeugdaten vergleichen, um den Restwert des Fahrzeugs zu ermitteln. Diese Vorgehensweise ist zu einem sehr aufwendig und zum anderen besteht die Gefahr, dass man durch zu niedrig angesetzte Preise die Gewinne geschmälert werden können. „So mussten die deutschen Automobilhersteller in den USA rund 1 Milliarde Euro Verlust beim Wiederverkauf von 2,2 Millionen Autos, deren Leasingverträge 2008 ausliefen, hinnehmen.“ (Deutsche Presse-Agentur GmbH, 2009).
 
-**Model Problem Definition**
+**Modell Problem Definition**
 
 Wir wollen, dass das Modell den Restwert von Leasingrückläufern ermittelt.
 Das ideale Ergebnis ist es, einen präzisen Restwert zu erhalten, sodass die Komplexität bei der Restwertermittlung reduzieren werden kann.
