@@ -1,9 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title:    
+title:
 author: Cenk Yagkan
 logo: images/logo2.png
+copyright: Cenk Yagkan 2021
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
