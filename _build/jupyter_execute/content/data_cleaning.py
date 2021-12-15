@@ -3,6 +3,8 @@
 
 # # Data Cleaning
 
+# In den folgenden Zeilen werden die gescrapten Daten bereinitgt und weitere Spalten erstellt.
+
 # ## Import Dependencies 
 
 # In[1]:
@@ -40,14 +42,13 @@ df.tail()
 df.info()
 
 
-# ### Clean Column "price"
-
 # In[6]:
 
 
-#Alle Zeilen entfernen, bei denen kein Preis vorhanden ist
-df = df[df['price'] != '-1']
+df.describe() # liefert hier noch wenig Erkenntnisse, da die Daten noch nicht in der richtigen Form vorliegen
 
+
+# ### Clean Column "price"
 
 # In[7]:
 
@@ -81,12 +82,18 @@ df_new = pd.concat([df_str, df_int], axis=0)
 # In[11]:
 
 
-df_new
+df_new.price.apply(type).value_counts()
+
+
+# In[12]:
+
+
+sns.histplot(data=df_new, x="price")
 
 
 # ### Create Modelname from Carname
 
-# In[12]:
+# In[13]:
 
 
 def make_car_model(x):
@@ -191,7 +198,7 @@ def make_car_model(x):
         return 'OTHER'
 
 
-# In[13]:
+# In[14]:
 
 
 df_new.carname.apply(type).value_counts()
@@ -199,13 +206,19 @@ df_new[df_new.carname.apply(type) == int]
 df_new = df_new.drop(660)
 
 
-# In[14]:
+# In[15]:
 
 
 df_new['Model'] = df_new['carname'].apply(make_car_model)
 
 
-# In[15]:
+# In[16]:
+
+
+df_new.Model.value_counts()
+
+
+# In[17]:
 
 
 df_new
@@ -213,22 +226,28 @@ df_new
 
 # ### Clean column "milage"
 
-# In[16]:
+# In[18]:
 
 
 df_new['milage'] = df_new['milage'].apply(lambda x: float(x.lower().replace('km', '').replace('.','')))
 
 
+# In[19]:
+
+
+sns.histplot(data=df_new, x="milage")
+
+
 # ### Clean column "hubraum"
 
-# In[17]:
+# In[20]:
 
 
 df_str = df_new[df_new.hubraum.apply(type) == str]
 df_int = df_new[df_new.hubraum.apply(type) == int]
 
 
-# In[18]:
+# In[21]:
 
 
 df_int['hubraum'] = df_int['hubraum'].replace(-1, np.nan)
@@ -237,34 +256,11 @@ df_str['hubraum'] = df_str['hubraum'].astype(float)
 df_new = pd.concat([df_str, df_int], axis=0)
 
 
-# In[19]:
-
-
-df_new
-
-
-# ### Clean column power PS
-
-# In[20]:
-
-
-df_new.power.apply(type).value_counts()
-df_new[df_new.power.apply(type) == int]
-df_new['power'] = df_new['power'].replace(-1, np.nan)
-df_new['power'] =  df_new['power'].astype(str)
-
-
-# In[21]:
-
-
-df_new.info()
-df_new.power.apply(type).value_counts()
-
-
 # In[22]:
 
 
-df_new['power_ps'] = df_new['power'].apply(lambda x: x.lower().replace('(', '').split()[2] if x != "nan" else None)
+sns.set(rc={'figure.figsize':(11.7,8.27)})
+sns.countplot(data=df_new, x="hubraum")
 
 
 # In[23]:
@@ -273,29 +269,61 @@ df_new['power_ps'] = df_new['power'].apply(lambda x: x.lower().replace('(', '').
 df_new
 
 
-# ### Clean column power KW
+# ### Clean column power PS
 
 # In[24]:
 
 
-df_new['power_kw'] = df_new['power'].apply(lambda x: x.lower().replace('(', '').split()[0] if x != "nan" else None)
+df_new.power.apply(type).value_counts()
+df_new[df_new.power.apply(type) == int]
+df_new['power'] = df_new['power'].replace(-1, np.nan)
+df_new['power'] =  df_new['power'].astype(str)
 
-
-# ### Clean column fuel_type
 
 # In[25]:
 
 
-df_new.fuel_type.apply(type).value_counts()
+df_new.info()
+df_new.power.apply(type).value_counts()
 
 
 # In[26]:
 
 
-df_new['fuel_type'] = df_new['fuel_type'].astype(str)
+# Extract ps from the column power
+df_new['power_ps'] = df_new['power'].apply(lambda x: x.lower().replace('(', '').split()[2] if x != "nan" else None)
 
 
 # In[27]:
+
+
+df_new
+
+
+# ### Clean column power KW
+
+# In[28]:
+
+
+# Extract KW from the column power
+df_new['power_kw'] = df_new['power'].apply(lambda x: x.lower().replace('(', '').split()[0] if x != "nan" else None)
+
+
+# ### Clean column fuel_type
+
+# In[29]:
+
+
+df_new.fuel_type.apply(type).value_counts()
+
+
+# In[30]:
+
+
+df_new['fuel_type'] = df_new['fuel_type'].astype(str)
+
+
+# In[31]:
 
 
 def fueltype(x):
@@ -306,27 +334,33 @@ def fueltype(x):
         return x.split()[0].replace(',', '')
 
 
-# In[28]:
+# In[32]:
 
 
 df_new['fuel_type'] = df_new['fuel_type'].apply(fueltype)
 
 
+# In[33]:
+
+
+df_new['fuel_type'].value_counts()
+
+
 # ### Clean column transmission
 
-# In[29]:
+# In[34]:
 
 
 df_new['transmission'].value_counts().plot(kind='bar')
 
 
-# In[30]:
+# In[35]:
 
 
 df_new['transmission'] = df_new['transmission'].replace(-1, np.nan)
 
 
-# In[31]:
+# In[36]:
 
 
 df_new.info()
@@ -334,7 +368,7 @@ df_new.info()
 
 # ### Calculate Age of the Car from frist_registration
 
-# In[32]:
+# In[37]:
 
 
 def car_age(x):
@@ -344,41 +378,41 @@ def car_age(x):
     return age
 
 
-# In[33]:
+# In[38]:
 
 
 df_new['age'] = df_new['first_registration'].apply(car_age)
 
 
+# In[39]:
+
+
+sns.histplot(data=df_new, x="age", bins = 15)
+
+
 # ### Clean column num_seats
 
-# In[34]:
+# In[40]:
 
 
 df_new['num_seats'] = df_new['num_seats'].apply(lambda x: str(x) if x != -1 else np.nan)
 
 
-# In[35]:
+# In[41]:
 
 
 df_new['num_seats'].value_counts().plot(kind='bar')
 
 
-# In[36]:
-
-
-df_new.loc[df['num_seats'] == 8]
-
-
 # ### Clean column num_doors
 
-# In[37]:
+# In[42]:
 
 
 df_new['num_doors'] = df_new['num_doors'].apply(lambda x: x if x != -1 else np.nan)
 
 
-# In[38]:
+# In[43]:
 
 
 df_new
@@ -386,19 +420,19 @@ df_new
 
 # ### Clean column emission_class
 
-# In[39]:
+# In[44]:
 
 
 df_new['emission_class'] = df_new['emission_class'].apply(lambda x: x if x != -1 else np.nan)
 
 
-# In[40]:
+# In[45]:
 
 
 df_new['emission_class'] = df_new['emission_class'].replace('Euro6d-TEMP', 'Euro6d')
 
 
-# In[41]:
+# In[46]:
 
 
 df_new['emission_class'].value_counts().plot(kind='bar')
@@ -406,7 +440,7 @@ df_new['emission_class'].value_counts().plot(kind='bar')
 
 # ### Clean column car_type
 
-# In[42]:
+# In[47]:
 
 
 def simplify_cartype(x):
@@ -433,15 +467,21 @@ def simplify_cartype(x):
         return xl
 
 
-# In[43]:
+# In[48]:
 
 
 df_new['car_type'] = df_new['car_type'].apply(simplify_cartype)
 
 
+# In[49]:
+
+
+sns.countplot(data=df_new, x="car_type")
+
+
 # ### Clean column num_owners
 
-# In[44]:
+# In[50]:
 
 
 df_new['num_owners'] = df_new['num_owners'].apply(lambda x: str(x) if x != -1 else np.nan)
@@ -449,13 +489,13 @@ df_new['num_owners'] = df_new['num_owners'].apply(lambda x: str(x) if x != -1 el
 
 # ### Clean column damage
 
-# In[45]:
+# In[51]:
 
 
 df_new['damage'] = df_new['damage'].astype(str)
 
 
-# In[46]:
+# In[52]:
 
 
 def damage(x):
@@ -468,33 +508,33 @@ def damage(x):
         return np.nan
 
 
-# In[47]:
+# In[53]:
 
 
 df_new.fuel_type.apply(type).value_counts()
 
 
-# In[48]:
+# In[54]:
 
 
 df_new['schaden'] = df_new['damage'].apply(damage)
 
 
-# In[49]:
+# In[55]:
 
 
-df_new
+sns.countplot(data=df_new, x="schaden")
 
 
 # ### Remove columns that are no longer needed
 
-# In[50]:
+# In[56]:
 
 
 df_cleaned = df_new.drop(['construction_year', 'power', 'first_registration', 'damage'], axis=1)
 
 
-# In[51]:
+# In[57]:
 
 
 df_cleaned.info()
@@ -502,7 +542,7 @@ df_cleaned.info()
 
 # ### Change dtypes of the columns
 
-# In[52]:
+# In[58]:
 
 
 df_cleaned['fuel_type'] = df_cleaned['fuel_type'].astype("category")
@@ -518,16 +558,267 @@ df_cleaned['power_kw'] = df_cleaned['power_kw'].astype(float)
 df_cleaned['schaden'] = df_cleaned['schaden'].astype("category")
 
 
-# In[53]:
+# In[59]:
 
 
 df_cleaned
 
 
-# In[ ]:
+# ## Bereinigung der Missing Values
+
+# Nachdem die Daten nun in der ersten Runde aufbereitet wurden, werde ich mich in den kommenden Zeilen um die Missing Values kümmern.
+
+# In[60]:
 
 
+df_cleaned.info()
 
+
+# In[61]:
+
+
+sns.heatmap(df_cleaned.isnull(), cbar=False)
+
+
+# In[62]:
+
+
+df_cleaned.isna().sum()
+
+
+# ### Bereinung der MVs von Hubraum
+
+# In[63]:
+
+
+sns.countplot(data=df_cleaned, x="hubraum")
+df_cleaned.hubraum.mean()
+
+
+# In[64]:
+
+
+sns.scatterplot(data=df_cleaned, x="hubraum", y="price")
+
+
+# In[65]:
+
+
+df_cleaned[['price', 'hubraum']].corr()
+
+
+# In[66]:
+
+
+corr = df_cleaned.corr()
+#matrix = np.triu(corr)
+sns.heatmap(corr, annot = True, square= True)
+
+
+# In[67]:
+
+
+x = df_cleaned[['price', 'hubraum']].to_numpy()
+type(x)
+x
+
+
+# Zwischen price und hubraum besteht eine hohe korrelation -> Je höher der Preis, desto größer der Hubraum. Es besteht in diesem Fall eine positive Beziehung. So würde ich mich für eine deterministische Regressions Imputation entscheiden, um die MVs zu berechnen.
+
+# In[68]:
+
+
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
+
+print("Original x: \n",x)
+
+#Initialize Deterministic Regression Imputation with 10 iterations
+imp = IterativeImputer(max_iter=10, random_state=0)
+#imp2 = IterativeImputer(max_iter=10, sample_posterior=True, random_state=0)
+
+#Fit and transform array x and print the result
+imp.fit(x)
+#imp2.fit(x)
+x_cleaned = imp.transform(x)
+#x_cleaned2 = np.round(imp2.transform(x))
+print("Deterministic Regression Imputation of x: \n", x_cleaned)
+
+
+# In[69]:
+
+
+dataset = pd.DataFrame({'price': x_cleaned[:, 0], 'hubraum': x_cleaned[:, 1]})
+df_cleaned['hubraum_regimputation'] = dataset.hubraum
+df_cleaned['hubraum_regimputation'] = df_cleaned['hubraum_regimputation'].round(3)
+
+
+# In[70]:
+
+
+sns.heatmap(df_cleaned.isnull(), cbar=False)
+
+
+# In[71]:
+
+
+corr = df_cleaned.corr()
+#matrix = np.triu(corr)
+sns.heatmap(corr, annot = True, square= True)
+
+
+# Es hat sich herausgestellt,dass die Beziehung zwischen Hubraum und der Zielvariable price durch die Regressions Imputation deutlich geschwächt wurde. (Von 0,58 auf -0,0015 gesunken) So entscheide ich mich doch dafür die MVs einfach zu droppen.
+
+# In[72]:
+
+
+df_cleaned = df_cleaned.drop(['hubraum_regimputation'], axis=1)
+
+
+# In[73]:
+
+
+df_cleaned = df_cleaned.dropna(subset=['hubraum'])
+
+
+# In[74]:
+
+
+df_cleaned.info()
+
+
+# In[75]:
+
+
+sns.heatmap(df_cleaned.isnull(), cbar=False)
+
+
+# ### Bereinung der MVs von num_seats
+
+# In[76]:
+
+
+df_cleaned.num_seats.isna().sum()
+
+
+# In[77]:
+
+
+sns.countplot(data=df_cleaned, x="num_seats")
+
+
+# Da num_seats sehr häufig vorkommt, der ich die MVS mit most_frequent bzw. Modus ersetzen.
+
+# In[78]:
+
+
+#df_cleaned.num_seats.mode().iloc[0]
+df_cleaned.num_seats = df_cleaned.num_seats.fillna(df_cleaned.num_seats.mode().iloc[0])
+
+
+# In[79]:
+
+
+df_cleaned.num_seats.isna().sum()
+
+
+# In[80]:
+
+
+sns.heatmap(df_cleaned.isnull(), cbar=False)
+
+
+# ### Bereinung der MVs von emission_class
+
+# In[81]:
+
+
+df_cleaned.emission_class.isna().sum()
+
+
+# In[82]:
+
+
+df_cleaned = df_cleaned.dropna(subset=['emission_class'])
+
+
+# In[83]:
+
+
+sns.heatmap(df_cleaned.isnull(), cbar=False)
+
+
+# ### Bereinung der MVs von emission_class
+
+# In[84]:
+
+
+df_cleaned.num_owners.isna().sum()
+
+
+# In[85]:
+
+
+# Da num_owners ebenfalls eine wichtige Variable für das Modell ist, werde nur die MVS entfernen und nicht die ganze Spalte.
+df_cleaned = df_cleaned.dropna(subset=['num_owners'])
+
+
+# In[86]:
+
+
+df_cleaned.num_owners.isna().sum()
+
+
+# ### Bereinung der MVs von schaden
+
+# In[87]:
+
+
+df_cleaned.schaden.value_counts()
+
+
+# In[88]:
+
+
+df_cleaned.schaden.isna().sum()
+
+
+# Da sehr viele MVs vorliegen und es hauptsächlich um unfallfreie Fahrzeuge handelt, hat dieses Feature keine Aussagekraft für die Zielvariable price. Deshalb werde ich dieses Feature entfernen.
+
+# In[89]:
+
+
+df_cleaned = df_cleaned.drop(['schaden'], axis=1)
+
+
+# In[90]:
+
+
+df_cleaned.isna().sum()
+
+
+# In[91]:
+
+
+df_cleaned = df_cleaned.dropna()
+
+
+# In[92]:
+
+
+df_cleaned.isna().sum()
+
+
+# In[93]:
+
+
+df_cleaned.info()
+
+
+# In[94]:
+
+
+df_cleaned.to_csv("mobile_clean_data" + ".csv", index=False)
 
 
 # In[ ]:
