@@ -2,7 +2,7 @@
 
 ## Identifizierung von Usecases
 
-**Reduzierung des Risikos bei Leasinganträgen **
+**Reduzierung des Risikos bei Leasinganträgen**
 
 ![Daimler Leasing](images/leasing_schaubild.png)
 
@@ -33,7 +33,7 @@ Damit das Modell auch präzise Ergebnisse liefert, muss das Modell mit einem qua
 In der folgenden Grafik sind die potenziellen relevanten Variablen zu sehen, die einen Einfluss auf die abhängige Variable „Risiko“ haben.
 
 
-![car_variablen](images/v_leasingrisiko.png)
+![car_variablen](images/vleasingrisiko.png)
 
 ## Definition der Metriken
 
