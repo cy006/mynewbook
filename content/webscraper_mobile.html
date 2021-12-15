@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Webscraper mobile.de</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -54,7 +54,10 @@
     <link rel="next" title="Data Cleaning" href="data_cleaning.html" />
     <link rel="prev" title="1. Plan Restwertermittlung" href="../plan_restwertermittlung.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -91,7 +94,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Restwertermittlung
  </span>
@@ -113,7 +116,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Leasingrisiko
  </span>
@@ -243,6 +246,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="webscraper-mobile-de">
 <h1>Webscraper <a class="reference external" href="http://mobile.de">mobile.de</a><a class="headerlink" href="#webscraper-mobile-de" title="Permalink to this headline">¶</a></h1>
+<p>Im Rahmen meiner Recherche nach passenden Daten, konnte ich nichts passendes finden. So entschied ich mich dazu, einen Webscraper für die Website “<a class="reference external" href="http://mobile.de">mobile.de</a>” zu entwickeln. <a class="reference external" href="http://Mobile.de">Mobile.de</a> hat auf den einzelnen Fahrzeugseiten viele Fahrzeuginformationen, die ich in meinen Recherchen als potenzielle relevante Variablen identifiziert habe. Da der Preis auf dieser Website durch den Insersatersteller gesetzt wird, besteht natürlich die Gefahr, dass realitätsferne Preise möglich sind. Um dieses Risiko zu reduzieren, habe ich nur die Inserate gescrapt die von den Händlern erstellt wurden. Um den Leasingcharakter der gescrapten Fahrzahreuge beizubehalten wurden nur Fahrzeuge gescrapt deren Erstzulassung zwischen 2017 und 2021 liegt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
@@ -299,7 +303,7 @@
     <span class="n">price_min</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s2">&quot;minPrice&quot;</span><span class="p">)</span>
     <span class="n">price_min</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">price_minimum</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="c1">#macPrice</span>
+    <span class="c1">#maxPrice</span>
     <span class="n">price_max</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s2">&quot;maxPrice&quot;</span><span class="p">)</span>
     <span class="n">price_max</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">price_maximum</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -545,15 +549,49 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">2</span><span class="n">d</span><span class="o">/</span><span class="n">bdyc79kj20qfm2zqrn61_dfw0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_12438</span><span class="o">/</span><span class="mf">2420060198.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">selenium.webdriver.common.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">selenium.webdriver.common.action_chains</span> <span class="kn">import</span> <span class="n">ActionChains</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/selenium/webdriver/common/service.py</span> in <span class="ni">start</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>             <span class="n">cmd</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">command_line_args</span><span class="p">())</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>             <span class="bp">self</span><span class="o">.</span><span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>                                             <span class="n">close_fds</span><span class="o">=</span><span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;Windows&#39;</span><span class="p">,</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;selenium&#39;
+<span class="nn">~/opt/anaconda3/lib/python3.8/subprocess.py</span> in <span class="ni">__init__</span><span class="nt">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, encoding, errors, text)</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span> 
+<span class="ne">--&gt; </span><span class="mi">858</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_execute_child</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">executable</span><span class="p">,</span> <span class="n">preexec_fn</span><span class="p">,</span> <span class="n">close_fds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span>                                 <span class="n">pass_fds</span><span class="p">,</span> <span class="n">cwd</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/subprocess.py</span> in <span class="ni">_execute_child</span><span class="nt">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, start_new_session)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1705</span>                         <span class="n">err_msg</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">strerror</span><span class="p">(</span><span class="n">errno_num</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1706</span>                     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">err_filename</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1707</span>                 <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/cenkyagkan/Downloads/chromedriver&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">WebDriverException</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">da7d05f2309b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="n">cars</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">---&gt; </span><span class="mi">26</span>     <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">PATH</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="n">driver</span><span class="o">.</span><span class="n">maximize_window</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/selenium/webdriver/chrome/webdriver.py</span> in <span class="ni">__init__</span><span class="nt">(self, executable_path, port, options, service_args, desired_capabilities, service_log_path, chrome_options, keep_alive)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>             <span class="n">service_args</span><span class="o">=</span><span class="n">service_args</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>             <span class="n">log_path</span><span class="o">=</span><span class="n">service_log_path</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">73</span>         <span class="bp">self</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/selenium/webdriver/common/service.py</span> in <span class="ni">start</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>         <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>             <span class="k">if</span> <span class="n">err</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="n">errno</span><span class="o">.</span><span class="n">ENOENT</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">81</span>                 <span class="k">raise</span> <span class="n">WebDriverException</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>                     <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; executable needs to be in PATH. </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>                         <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_error_message</span><span class="p">)</span>
+
+<span class="ne">WebDriverException</span>: Message: &#39;chromedriver&#39; executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
 </pre></div>
 </div>
 </div>
@@ -837,31 +875,22 @@
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../plan_restwertermittlung.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">1. Plan Restwertermittlung</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../plan_restwertermittlung.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">1. Plan Restwertermittlung</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="data_cleaning.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Cleaning</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="data_cleaning.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Data Cleaning</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -882,8 +911,7 @@
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

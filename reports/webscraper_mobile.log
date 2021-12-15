@@ -1,19 +1,19 @@
 Traceback (most recent call last):
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
-    record_timing=False,
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/client.py", line 1117, in execute
+  File "/Users/cenkyagkan/opt/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/cenkyagkan/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/util.py", line 78, in wrapped
+  File "/Users/cenkyagkan/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/util.py", line 57, in just_run
+  File "/Users/cenkyagkan/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
     return loop.run_until_complete(coro)
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+  File "/Users/cenkyagkan/opt/anaconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
     return future.result()
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/client.py", line 559, in async_execute
-    cell, index, execution_count=self.code_cells_executed + 1
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/client.py", line 862, in async_execute_cell
+  File "/Users/cenkyagkan/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/Users/cenkyagkan/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
     self._check_raise_for_error(cell, exec_reply)
-  File "/Users/cenkyagkan/opt/anaconda3/envs/jbook/lib/python3.7/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
+  File "/Users/cenkyagkan/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -71,7 +71,7 @@ while True:
     price_min = driver.find_element_by_id("minPrice")
     price_min.send_keys(price_minimum)
     time.sleep(0.5)
-    #macPrice
+    #maxPrice
     price_max = driver.find_element_by_id("maxPrice")
     price_max.send_keys(price_maximum)
     time.sleep(0.5)
@@ -315,14 +315,50 @@ data.to_csv("07_mobile_data_" + price_minimum + "_" + price_maximum + ".csv", in
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/2d/bdyc79kj20qfm2zqrn61_dfw0000gn/T/ipykernel_12438/2420060198.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mfrom[0m [0mselenium[0m [0;32mimport[0m [0mwebdriver[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0;32mfrom[0m [0mselenium[0m[0;34m.[0m[0mwebdriver[0m[0;34m.[0m[0mcommon[0m[0;34m.[0m[0mkeys[0m [0;32mimport[0m [0mKeys[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0;32mfrom[0m [0mselenium[0m[0;34m.[0m[0mwebdriver[0m[0;34m.[0m[0mcommon[0m[0;34m.[0m[0maction_chains[0m [0;32mimport[0m [0mActionChains[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0;32mfrom[0m [0mselenium[0m[0;34m.[0m[0mwebdriver[0m[0;34m.[0m[0mcommon[0m[0;34m.[0m[0mby[0m [0;32mimport[0m [0mBy[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0;32mfrom[0m [0mselenium[0m[0;34m.[0m[0mwebdriver[0m[0;34m.[0m[0msupport[0m[0;34m.[0m[0mui[0m [0;32mimport[0m [0mWebDriverWait[0m[0;34m[0m[0;34m[0m[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/selenium/webdriver/common/service.py[0m in [0;36mstart[0;34m(self)[0m
+[1;32m     71[0m             [0mcmd[0m[0;34m.[0m[0mextend[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mcommand_line_args[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 72[0;31m             self.process = subprocess.Popen(cmd, env=self.env,
+[0m[1;32m     73[0m                                             [0mclose_fds[0m[0;34m=[0m[0mplatform[0m[0;34m.[0m[0msystem[0m[0;34m([0m[0;34m)[0m [0;34m!=[0m [0;34m'Windows'[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'selenium'
-ModuleNotFoundError: No module named 'selenium'
+[0;32m~/opt/anaconda3/lib/python3.8/subprocess.py[0m in [0;36m__init__[0;34m(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, encoding, errors, text)[0m
+[1;32m    857[0m [0;34m[0m[0m
+[0;32m--> 858[0;31m             self._execute_child(args, executable, preexec_fn, close_fds,
+[0m[1;32m    859[0m                                 [0mpass_fds[0m[0;34m,[0m [0mcwd[0m[0;34m,[0m [0menv[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/subprocess.py[0m in [0;36m_execute_child[0;34m(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, start_new_session)[0m
+[1;32m   1705[0m                         [0merr_msg[0m [0;34m=[0m [0mos[0m[0;34m.[0m[0mstrerror[0m[0;34m([0m[0merrno_num[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1706[0;31m                     [0;32mraise[0m [0mchild_exception_type[0m[0;34m([0m[0merrno_num[0m[0;34m,[0m [0merr_msg[0m[0;34m,[0m [0merr_filename[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1707[0m                 [0;32mraise[0m [0mchild_exception_type[0m[0;34m([0m[0merr_msg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/Users/cenkyagkan/Downloads/chromedriver'
+
+During handling of the above exception, another exception occurred:
+
+[0;31mWebDriverException[0m                        Traceback (most recent call last)
+[0;32m<ipython-input-1-da7d05f2309b>[0m in [0;36m<module>[0;34m[0m
+[1;32m     24[0m [0;32mwhile[0m [0;32mTrue[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     25[0m     [0mcars[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 26[0;31m     [0mdriver[0m [0;34m=[0m [0mwebdriver[0m[0;34m.[0m[0mChrome[0m[0;34m([0m[0mPATH[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     27[0m     [0mdriver[0m[0;34m.[0m[0mmaximize_window[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     28[0m     [0mdriver[0m[0;34m.[0m[0mget[0m[0;34m([0m[0murl[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/selenium/webdriver/chrome/webdriver.py[0m in [0;36m__init__[0;34m(self, executable_path, port, options, service_args, desired_capabilities, service_log_path, chrome_options, keep_alive)[0m
+[1;32m     71[0m             [0mservice_args[0m[0;34m=[0m[0mservice_args[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     72[0m             log_path=service_log_path)
+[0;32m---> 73[0;31m         [0mself[0m[0;34m.[0m[0mservice[0m[0;34m.[0m[0mstart[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     74[0m [0;34m[0m[0m
+[1;32m     75[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/selenium/webdriver/common/service.py[0m in [0;36mstart[0;34m(self)[0m
+[1;32m     79[0m         [0;32mexcept[0m [0mOSError[0m [0;32mas[0m [0merr[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     80[0m             [0;32mif[0m [0merr[0m[0;34m.[0m[0merrno[0m [0;34m==[0m [0merrno[0m[0;34m.[0m[0mENOENT[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 81[0;31m                 raise WebDriverException(
+[0m[1;32m     82[0m                     "'%s' executable needs to be in PATH. %s" % (
+[1;32m     83[0m                         os.path.basename(self.path), self.start_error_message)
+
+[0;31mWebDriverException[0m: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
 
