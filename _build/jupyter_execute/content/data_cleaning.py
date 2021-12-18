@@ -818,11 +818,5 @@ df_cleaned.info()
 # In[94]:
 
 
-df_cleaned.to_csv("mobile_clean_data" + ".csv", index=False)
-
-
-# In[ ]:
-
-
-
+df_cleaned.to_csv("mobile_clean_data"+ ".csv", index=False)
 
