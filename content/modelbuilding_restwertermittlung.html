@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Plan Leasingrisiko" href="../plan_leasingrisiko.html" />
+    <link rel="prev" title="EDA und Regression Diagnostic" href="EDA_Regression_Diagnostic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,7 +99,7 @@
   Restwertermittlung
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../plan_restwertermittlung.html">
    1. Plan Restwertermittlung
@@ -111,6 +113,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="data_cleaning.html">
    Data Cleaning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="EDA_Regression_Diagnostic.html">
+   EDA und Regression Diagnostic
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Modelbuilding Restwertermittlung
   </a>
  </li>
 </ul>
@@ -651,33 +663,33 @@ memory usage: 87.5+ KB
       <th>0</th>
       <td>LinearRegression()</td>
       <td>{'simpleimputer__strategy': 'mean'}</td>
-      <td>0.666319</td>
-      <td>6123.629193</td>
-      <td>8022.043766</td>
+      <td>0.695787</td>
+      <td>5726.821722</td>
+      <td>7794.250703</td>
     </tr>
     <tr>
       <th>1</th>
       <td>KNeighborsRegressor()</td>
       <td>{'simpleimputer__strategy': 'mean'}</td>
-      <td>0.292714</td>
-      <td>8990.176000</td>
-      <td>11679.303781</td>
+      <td>0.412736</td>
+      <td>8412.825000</td>
+      <td>10829.345620</td>
     </tr>
     <tr>
       <th>2</th>
       <td>RandomForestRegressor()</td>
-      <td>{'simpleimputer__strategy': 'mean'}</td>
-      <td>0.819728</td>
-      <td>4107.902564</td>
-      <td>5896.353292</td>
+      <td>{'simpleimputer__strategy': 'most_frequent'}</td>
+      <td>0.822988</td>
+      <td>3814.739393</td>
+      <td>5945.480200</td>
     </tr>
     <tr>
       <th>3</th>
       <td>GradientBoostingRegressor()</td>
       <td>{'simpleimputer__strategy': 'mean'}</td>
-      <td>0.811333</td>
-      <td>4541.426079</td>
-      <td>6032.087150</td>
+      <td>0.806498</td>
+      <td>4631.513303</td>
+      <td>6216.242530</td>
     </tr>
   </tbody>
 </table>
@@ -1117,14 +1129,16 @@ memory usage: 87.5+ KB
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline1 done
+pipeline2 done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline2 done
-pipeline3 done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline3 done
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline4 done
-pipeline5 done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline5 done
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline6 done
@@ -1134,10 +1148,10 @@ pipeline5 done
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline8 done
-pipeline9 done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline10 done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline9 done
+pipeline10 done
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipeline11 done
@@ -1614,7 +1628,21 @@ pipeline9 done
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="EDA_Regression_Diagnostic.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EDA und Regression Diagnostic</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../plan_leasingrisiko.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1. Plan Leasingrisiko</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
