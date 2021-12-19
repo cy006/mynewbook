@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Data Cleaning
+# # 3. Data Cleaning
 
 # In den folgenden Zeilen werden die gescrapten Daten bereinitgt und weitere Spalten erstellt.
 

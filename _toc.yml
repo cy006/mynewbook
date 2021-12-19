@@ -14,5 +14,4 @@ parts:
 - caption: Leasingrisiko
   chapters:
   - file: plan_leasingrisiko
-  - file: markdown
-  - file: notebooks
+  - file: Create_clean_Dataset

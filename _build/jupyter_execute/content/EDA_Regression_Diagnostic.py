@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # EDA und Regression Diagnostic
+# # 4. EDA und Regression Diagnostic
 
 # In[1]:
 

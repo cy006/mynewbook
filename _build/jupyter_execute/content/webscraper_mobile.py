@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Webscraper mobile.de
+# # 2. Webscraper mobile.de
 
 # Im Rahmen meiner Recherche nach passenden Daten, konnte ich nichts passendes finden. So entschied ich mich dazu, einen Webscraper für die Website "mobile.de" zu entwickeln. Mobile.de hat auf den einzelnen Fahrzeugseiten viele Fahrzeuginformationen, die ich in meinen Recherchen als potenzielle relevante Variablen identifiziert habe. Da der Preis auf dieser Website durch den Insersatersteller gesetzt wird, besteht natürlich die Gefahr, dass realitätsferne Preise möglich sind. Um dieses Risiko zu reduzieren, habe ich nur die Inserate gescrapt die von den Händlern erstellt wurden. Um den Leasingcharakter der gescrapten Fahrzahreuge beizubehalten wurden nur Fahrzeuge gescrapt deren Erstzulassung zwischen 2017 und 2021 liegt.
 
