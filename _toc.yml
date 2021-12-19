@@ -15,3 +15,5 @@ parts:
   chapters:
   - file: plan_leasingrisiko
   - file: Create_clean_Dataset
+  - file: Exploration_leasingrisk
+  - file: Modelbuilding_leasingrisk
