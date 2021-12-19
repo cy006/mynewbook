@@ -6,11 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5. Modelbuilding</title>
-    
+
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-    
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -18,10 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
 
-    
+
+
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -55,32 +55,32 @@
     <link rel="prev" title="4. EDA und Regression Diagnostic" href="EDA_Regression_Diagnostic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
-    
+
 
     <!-- Google Analytics -->
-    
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+
     <div class="container-fluid" id="banner"></div>
 
-    
+
 
     <div class="container-xl">
       <div class="row">
-          
+
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
+
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
-      
+
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
+
+
+
       <img src="../_static/logo2.png" class="logo" alt="logo">
-      
-      
+
+
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
@@ -99,29 +99,29 @@
   Restwertermittlung
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../plan_restwertermittlung.html">
+  <a class="reference internal" href="plan_restwertermittlung.html">
    1. Einführung
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="webscraper_mobile.html">
+  <a class="reference internal" href="content/webscraper_mobile.html">
    2. Webscraper mobile.de
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="data_cleaning.html">
+  <a class="reference internal" href="content/data_cleaning.html">
    3. Data Cleaning
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="EDA_Regression_Diagnostic.html">
+  <a class="reference internal" href="content/EDA_Regression_Diagnostic.html">
    4. EDA und Regression Diagnostic
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/modelbuilding_restwertermittlung.html">
    5. Modelbuilding
   </a>
  </li>
@@ -133,18 +133,23 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../plan_leasingrisiko.html">
-   1. Plan Leasingrisiko
+  <a class="reference internal" href="plan_leasingrisiko.html">
+   1. Einführung
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../markdown.html">
-   Markdown Files
+  <a class="reference internal" href="content/Create_clean_Dataset.html">
+   2. Create clean Dataset
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="content/Exploration_leasingrisk.html">
+   3. Explorative Datenanalyse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/Modelbuilding_leasingrisk.html">
+   4. Modelbuilding
   </a>
  </li>
 </ul>
@@ -159,17 +164,17 @@
 </div>
 
 
-          
 
 
-          
+
+
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
+
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            
+
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
                 aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
@@ -178,15 +183,15 @@
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
             </button>
-            
-            
+
+
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/content/modelbuilding_restwertermittlung.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
@@ -211,7 +216,7 @@
             href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/modelbuilding_restwertermittlung.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
-        
+
     </div>
 </div>
 
@@ -228,16 +233,16 @@
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
-        
+
         <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/content/modelbuilding_restwertermittlung.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+
+
     </div>
 </div>
 
@@ -245,7 +250,7 @@
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
-            
+
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Inhalt
             </div>
@@ -321,9 +326,9 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+
               <div>
-                
+
   <div class="tex2jax_ignore mathjax_ignore section" id="modelbuilding">
 <h1>5. Modelbuilding<a class="headerlink" href="#modelbuilding" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="import-dependencies">
@@ -332,7 +337,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">math</span> 
+<span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
@@ -521,20 +526,20 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 799 entries, 0 to 798
 Data columns (total 14 columns):
- #   Column          Non-Null Count  Dtype  
----  ------          --------------  -----  
- 0   carname         799 non-null    object 
+ #   Column          Non-Null Count  Dtype
+---  ------          --------------  -----
+ 0   carname         799 non-null    object
  1   price           799 non-null    float64
  2   milage          799 non-null    float64
  3   hubraum         799 non-null    float64
- 4   fuel_type       799 non-null    object 
- 5   transmission    799 non-null    object 
- 6   num_seats       799 non-null    int64  
- 7   num_doors       799 non-null    object 
- 8   emission_class  799 non-null    object 
- 9   car_type        799 non-null    object 
- 10  num_owners      799 non-null    int64  
- 11  Model           799 non-null    object 
+ 4   fuel_type       799 non-null    object
+ 5   transmission    799 non-null    object
+ 6   num_seats       799 non-null    int64
+ 7   num_doors       799 non-null    object
+ 8   emission_class  799 non-null    object
+ 9   car_type        799 non-null    object
+ 10  num_owners      799 non-null    int64
+ 11  Model           799 non-null    object
  12  power_ps        799 non-null    float64
  13  age             799 non-null    float64
 dtypes: float64(5), int64(2), object(7)
@@ -615,10 +620,10 @@ memory usage: 87.5+ KB
     <span class="n">gs</span><span class="o">=</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span><span class="n">params</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_traincat</span><span class="p">,</span> <span class="n">y_traincat</span><span class="p">)</span>
     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">gs</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_testcat</span><span class="p">)</span>
-     
+
     <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_testcat</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
     <span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_testcat</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    
+
     <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gs</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_testcat</span><span class="p">,</span> <span class="n">y_testcat</span><span class="p">))</span>
     <span class="n">best_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gs</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
     <span class="n">maes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mae</span><span class="p">)</span>
@@ -733,7 +738,7 @@ memory usage: 87.5+ KB
 
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline2&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
@@ -753,7 +758,7 @@ memory usage: 87.5+ KB
 
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline3&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
@@ -773,13 +778,13 @@ memory usage: 87.5+ KB
 
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline4&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
 
         <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
-            
+
            <span class="s1">&#39;preprocessor__num__simpleimputer__strategy&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;most_frequent&#39;</span><span class="p">],</span>
            <span class="s1">&#39;preprocessor__num__quantil_transformer__n_quantiles&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
            <span class="s1">&#39;preprocessor__num__quantil_transformer__output_distribution&#39;</span><span class="p">:[</span><span class="s1">&#39;normal&#39;</span><span class="p">]</span>
@@ -796,13 +801,13 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline5&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
 
         <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
-            
+
            <span class="s1">&#39;preprocessor__num__simpleimputer__strategy&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;most_frequent&#39;</span><span class="p">],</span>
 
         <span class="p">},</span>
@@ -818,13 +823,13 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline6&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
 
         <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
-            
+
            <span class="s1">&#39;preprocessor__num__simpleimputer__strategy&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;most_frequent&#39;</span><span class="p">],</span>
 
         <span class="p">},</span>
@@ -840,13 +845,13 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline7&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
 
         <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
-            
+
            <span class="s1">&#39;preprocessor__num__simpleimputer__strategy&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;most_frequent&#39;</span><span class="p">],</span>
            <span class="s1">&#39;preprocessor__num__quantil_transformer__n_quantiles&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
            <span class="s1">&#39;preprocessor__num__quantil_transformer__output_distribution&#39;</span><span class="p">:[</span><span class="s1">&#39;normal&#39;</span><span class="p">]</span>
@@ -863,7 +868,7 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline8&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
@@ -886,7 +891,7 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline9&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
@@ -907,7 +912,7 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline10&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
@@ -928,7 +933,7 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline11&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">KNeighborsRegressor</span><span class="p">(),</span>
@@ -951,7 +956,7 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline12&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">RandomForestRegressor</span><span class="p">(),</span>
@@ -975,7 +980,7 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))]),</span>
 
     <span class="p">},</span>
-    
+
     <span class="s2">&quot;pipeline13&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">RandomForestRegressor</span><span class="p">(),</span>
@@ -1003,7 +1008,7 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one_hot_encoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))]),</span>
 
     <span class="p">},</span>
-    
+
      <span class="s2">&quot;pipeline14&quot;</span><span class="p">:</span> <span class="p">{</span>
 
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">RandomForestRegressor</span><span class="p">(),</span>
@@ -1030,7 +1035,7 @@ memory usage: 87.5+ KB
         <span class="s2">&quot;categoric_transformer&quot;</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;onehotencoder&#39;</span><span class="p">,</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))])</span>
 
     <span class="p">},</span>
-    
+
       <span class="s2">&quot;pipeline15&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">GradientBoostingRegressor</span><span class="p">(),</span>
         <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1105,11 +1110,11 @@ memory usage: 87.5+ KB
     <span class="c1"># GridSearch</span>
     <span class="n">gs</span><span class="o">=</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pre_pipe</span><span class="p">,</span><span class="n">params</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_2</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    
+
     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">gs</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_2</span><span class="p">)</span>
     <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
     <span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    
+
     <span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
     <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gs</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_2</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
     <span class="n">best_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gs</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
@@ -1120,7 +1125,7 @@ memory usage: 87.5+ KB
     <span class="n">rmses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="p">))</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
-    
+
 
 <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Pipe&#39;</span><span class="p">:</span><span class="n">pipes</span><span class="p">,</span><span class="s1">&#39;Algorithm&#39;</span><span class="p">:</span> <span class="n">models</span><span class="p">,</span> <span class="s1">&#39;Features&#39;</span><span class="p">:</span> <span class="n">feats</span><span class="p">,</span><span class="s1">&#39;Best Params&#39;</span><span class="p">:</span> <span class="n">best_params</span><span class="p">,</span> <span class="s1">&#39;Preprocessor&#39;</span><span class="p">:</span> <span class="n">trans</span><span class="p">,</span> <span class="s1">&#39;Score&#39;</span><span class="p">:</span> <span class="n">scores</span><span class="p">,</span> <span class="s1">&#39;MAE&#39;</span><span class="p">:</span><span class="n">maes</span><span class="p">,</span> <span class="s1">&#39;RMSE&#39;</span><span class="p">:</span> <span class="n">rmses</span><span class="p">}</span>
 <span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
@@ -1166,39 +1171,39 @@ pipeline9 done
 <span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="c1"># GridSearch</span>
 <span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="n">gs</span><span class="o">=</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pre_pipe</span><span class="p">,</span><span class="n">params</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="ne">---&gt; </span><span class="mi">41</span>     <span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_2</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> 
+<span class="g g-Whitespace">     </span><span class="mi">42</span>
 <span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">gs</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_2</span><span class="p">)</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">61</span>             <span class="n">extra_args</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_args</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">62</span>             <span class="k">if</span> <span class="n">extra_args</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
 <span class="ne">---&gt; </span><span class="mi">63</span>                 <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span> 
+<span class="g g-Whitespace">     </span><span class="mi">64</span>
 <span class="g g-Whitespace">     </span><span class="mi">65</span>             <span class="c1"># extra_args &gt; 0</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/sklearn/model_selection/_search.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, groups, **fit_params)</span>
 <span class="g g-Whitespace">    </span><span class="mi">839</span>                 <span class="k">return</span> <span class="n">results</span>
-<span class="g g-Whitespace">    </span><span class="mi">840</span> 
+<span class="g g-Whitespace">    </span><span class="mi">840</span>
 <span class="ne">--&gt; </span><span class="mi">841</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_run_search</span><span class="p">(</span><span class="n">evaluate_candidates</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">842</span> 
+<span class="g g-Whitespace">    </span><span class="mi">842</span>
 <span class="g g-Whitespace">    </span><span class="mi">843</span>             <span class="c1"># multimetric is determined here because in the case of a callable</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/sklearn/model_selection/_search.py</span> in <span class="ni">_run_search</span><span class="nt">(self, evaluate_candidates)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1286</span>     <span class="k">def</span> <span class="nf">_run_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">evaluate_candidates</span><span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">1287</span>         <span class="sd">&quot;&quot;&quot;Search all candidates in param_grid&quot;&quot;&quot;</span>
 <span class="ne">-&gt; </span><span class="mi">1288</span>         <span class="n">evaluate_candidates</span><span class="p">(</span><span class="n">ParameterGrid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param_grid</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1289</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1290</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1289</span>
+<span class="g g-Whitespace">   </span><span class="mi">1290</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/sklearn/model_selection/_search.py</span> in <span class="ni">evaluate_candidates</span><span class="nt">(candidate_params, cv, more_results)</span>
 <span class="g g-Whitespace">    </span><span class="mi">793</span>                               <span class="n">n_splits</span><span class="p">,</span> <span class="n">n_candidates</span><span class="p">,</span> <span class="n">n_candidates</span> <span class="o">*</span> <span class="n">n_splits</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span> 
+<span class="g g-Whitespace">    </span><span class="mi">794</span>
 <span class="ne">--&gt; </span><span class="mi">795</span>                 <span class="n">out</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span><span class="n">delayed</span><span class="p">(</span><span class="n">_fit_and_score</span><span class="p">)(</span><span class="n">clone</span><span class="p">(</span><span class="n">base_estimator</span><span class="p">),</span>
 <span class="g g-Whitespace">    </span><span class="mi">796</span>                                                        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">797</span>                                                        <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/joblib/parallel.py</span> in <span class="ni">__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1052</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1052</span>
 <span class="g g-Whitespace">   </span><span class="mi">1053</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
 <span class="ne">-&gt; </span><span class="mi">1054</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">retrieve</span><span class="p">()</span>
 <span class="g g-Whitespace">   </span><span class="mi">1055</span>             <span class="c1"># Make sure that we get a last message telling us we are done</span>
@@ -1232,7 +1237,7 @@ pipeline9 done
 <span class="g g-Whitespace">    </span><span class="mi">303</span><span class="s2">                 gotit = True</span>
 <span class="g g-Whitespace">    </span><span class="mi">304</span><span class="s2">             else:</span>
 
-<span class="ne">KeyboardInterrupt</span>: 
+<span class="ne">KeyboardInterrupt</span>:
 </pre></div>
 </div>
 </div>
@@ -1547,7 +1552,7 @@ pipeline9 done
     <span class="c1"># GridSearch</span>
 <span class="n">gs</span><span class="o">=</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pre_pipe</span><span class="p">,</span><span class="n">params</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    
+
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">gs</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1625,10 +1630,10 @@ pipeline9 done
     <script>kernelName = 'python3'</script>
 
               </div>
-              
-        
+
+
             <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="EDA_Regression_Diagnostic.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1644,15 +1649,15 @@ pipeline9 done
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+
         </div>
     </div>
     <footer class="footer">
     <div class="container">
       <p>
-        
+
           Durch Cenk Yagkan<br/>
-        
+
             &copy; Urheberrechte © Cenk Yagkan 2021.<br/>
       </p>
     </div>
@@ -1662,7 +1667,7 @@ pipeline9 done
 
       </div>
     </div>
-  
+
   <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
