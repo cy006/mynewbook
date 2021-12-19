@@ -168,7 +168,7 @@ print_metrics(df, 'Threshold 0.7')
 
 # ## Zusammenfassung des GLM
 # - Mit dem Generalized linear Modell konnte mit dem Schwellenwert von 0.4 der beste F-Score mit 99% berechnet werden.
-# - Ich habe mich ersten Schritt gegen SMOTE entschieden, da diese Methode auch ein Overfitting mitsichbringen kann und das Modell trotz einem unbalancierten Modell sehr gut performt.
+# - Ich habe mich gegen SMOTE entschieden, da diese Methode auch ein Overfitting mitsichbringen kann und das Modell trotz einem unbalancierten Modell sehr gut performt.
 # - Da es in diesem Usecase darum geht, das Risiko von Leasinganträgen zu reduzieren, bevorzuge ich den Recall als Evaluationsmetrik, da der Fokus mehr auf false-negative liegt.
 # - Wenn es tatsächlich ein Risiko ist, aber es als kein Risiko vorhergesagt wurde, ensteht für Mercedes Benz ein Schaden und diesen gilt es zu vermeiden. -> Deshalb bevorzuge ich den Recall als Evaluationsmetrik.
 # - **Das Modell wurde hier mit dem ganzen Datensatz gefittet. In den folgenden Zeilen werde ich Traings- und Testdaten erstellen und mit vielen unterschiedlichen Klassifikationsalgorithmen weitere Modelle erstellen.**
@@ -303,7 +303,6 @@ sns.barplot(x='model', y='F1_mean', data= df_models, palette=clrs, order=plot_or
 # - **Das Modell LogisticRegression hat im Verlgeich zu den anderen am besten abgeschnitten** -> Mit einem druchschnittlichen F1 Score von 0,959.
 # - Der XBgoost_Classifier hat ebenfalls einen sehr guten F1_Score erzielen können und ist auf dem zweiten Platz gelandet.
 # - Dieses Modell werde in den folgenden Zeilen genauer betrachten, indem ich dafür eine Confusionmatrix erstelle und weitere Metriken berechne.
-# - Des Weiteren werde ich auch eine Version erstellen indem ich SMOTE verwenden, um zu sehen, ob das oversampling einen positiven Effekt hat.
 
 # ### Bestes Modell: Logistic Regression
 
@@ -342,6 +341,9 @@ row = {'model': 'XGBClassifier without SMOTE',
 df_result = df_result.append(row, ignore_index=True)
 df_result.head()
 
+
+# - Ob ein Leasingantrag genehmigt werde soll oder nicht, kann das Klassifikationsmodell mit einer Genauigkeit von 100% einschätzen. Somit könnte man das Risiko von Zahlungsausfällen von den Leasingnehmern reduzieren.
+# - Das perfekte Ergebnis überrascht micht nicht, da das Modell die "einfache" Struktur verstanden hat, wie ich das Label für diesen Datensatz erzeugt habe.
 
 # In[27]:
 

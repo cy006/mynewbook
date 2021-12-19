@@ -14,6 +14,6 @@ parts:
 - caption: Leasingrisiko
   chapters:
   - file: plan_leasingrisiko
-  - file: Create_clean_Dataset
-  - file: Exploration_leasingrisk
-  - file: Modelbuilding_leasingrisk
+  - file: content/Create_clean_Dataset
+  - file: content/Exploration_leasingrisk
+  - file: content/Modelbuilding_leasingrisk
