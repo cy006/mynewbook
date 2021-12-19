@@ -6,11 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3. Data Cleaning</title>
-    
+
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-    
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -18,10 +18,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
 
-    
+
+
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -55,32 +55,32 @@
     <link rel="prev" title="2. Webscraper mobile.de" href="webscraper_mobile.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
-    
+
 
     <!-- Google Analytics -->
-    
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+
     <div class="container-fluid" id="banner"></div>
 
-    
+
 
     <div class="container-xl">
       <div class="row">
-          
+
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
+
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
-      
+
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
+
+
+
       <img src="../_static/logo2.png" class="logo" alt="logo">
-      
-      
+
+
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
@@ -99,29 +99,29 @@
   Restwertermittlung
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../plan_restwertermittlung.html">
+  <a class="reference internal" href="plan_restwertermittlung.html">
    1. Einführung
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="webscraper_mobile.html">
+  <a class="reference internal" href="content/webscraper_mobile.html">
    2. Webscraper mobile.de
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/data_cleaning.html">
    3. Data Cleaning
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="EDA_Regression_Diagnostic.html">
+  <a class="reference internal" href="content/EDA_Regression_Diagnostic.html">
    4. EDA und Regression Diagnostic
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="modelbuilding_restwertermittlung.html">
+  <a class="reference internal" href="content/modelbuilding_restwertermittlung.html">
    5. Modelbuilding
   </a>
  </li>
@@ -133,18 +133,23 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../plan_leasingrisiko.html">
-   1. Plan Leasingrisiko
+  <a class="reference internal" href="plan_leasingrisiko.html">
+   1. Einführung
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../markdown.html">
-   Markdown Files
+  <a class="reference internal" href="content/Create_clean_Dataset.html">
+   2. Create clean Dataset
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="content/Exploration_leasingrisk.html">
+   3. Explorative Datenanalyse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/Modelbuilding_leasingrisk.html">
+   4. Modelbuilding
   </a>
  </li>
 </ul>
@@ -159,17 +164,17 @@
 </div>
 
 
-          
 
 
-          
+
+
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
+
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            
+
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
                 aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
@@ -178,15 +183,15 @@
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
             </button>
-            
-            
+
+
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/content/data_cleaning.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
@@ -211,7 +216,7 @@
             href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontent/data_cleaning.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
-        
+
     </div>
 </div>
 
@@ -228,16 +233,16 @@
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
-        
+
         <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/content/data_cleaning.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+
+
     </div>
 </div>
 
@@ -245,7 +250,7 @@
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
-            
+
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Inhalt
             </div>
@@ -388,9 +393,9 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+
               <div>
-                
+
   <div class="tex2jax_ignore mathjax_ignore section" id="data-cleaning">
 <h1>3. Data Cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this headline">¶</a></h1>
 <p>In den folgenden Zeilen werden die gescrapten Daten bereinitgt und weitere Spalten erstellt.</p>
@@ -700,8 +705,8 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 1415 entries, 0 to 1414
 Data columns (total 15 columns):
- #   Column              Non-Null Count  Dtype 
----  ------              --------------  ----- 
+ #   Column              Non-Null Count  Dtype
+---  ------              --------------  -----
  0   carname             1415 non-null   object
  1   price               1415 non-null   object
  2   milage              1415 non-null   object
@@ -709,13 +714,13 @@ Data columns (total 15 columns):
  4   power               1415 non-null   object
  5   fuel_type           1415 non-null   object
  6   transmission        1415 non-null   object
- 7   construction_year   1415 non-null   int64 
+ 7   construction_year   1415 non-null   int64
  8   first_registration  1415 non-null   object
- 9   num_seats           1415 non-null   int64 
+ 9   num_seats           1415 non-null   int64
  10  num_doors           1415 non-null   object
  11  emission_class      1415 non-null   object
  12  car_type            1415 non-null   object
- 13  num_owners          1415 non-null   int64 
+ 13  num_owners          1415 non-null   int64
  14  damage              1415 non-null   object
 dtypes: int64(3), object(12)
 memory usage: 165.9+ KB
@@ -820,7 +825,7 @@ memory usage: 165.9+ KB
 2       24.990 € (Brutto)
 3                  129900
 4                   79990
-              ...        
+              ...
 1410    66.500 € (Brutto)
 1411    42.849 € (Brutto)
 1412    54.849 € (Brutto)
@@ -864,13 +869,13 @@ Name: price, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-10-842851fea67b&gt;:2: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-10-842851fea67b&gt;:2: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   df_str[&#39;price&#39;] = df_str[&#39;price&#39;].apply(lambda x: float(x.lower().replace(&#39;(brutto)&#39;, &#39;&#39;).replace(&#39;.&#39;,&#39;&#39;).replace(&#39;€&#39;,&#39;&#39;)))
-/Users/cenkyagkan/opt/anaconda3/lib/python3.8/site-packages/pandas/core/generic.py:5516: SettingWithCopyWarning: 
+/Users/cenkyagkan/opt/anaconda3/lib/python3.8/site-packages/pandas/core/generic.py:5516: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -915,100 +920,100 @@ Name: price, dtype: int64
     <span class="n">xl</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="k">if</span> <span class="s1">&#39;a-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;a klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39; A &#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;A1&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;A2&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;A4&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;A-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;b-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;b klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39; B &#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;B1&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;B2&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;B-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;c-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;c klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39; c &#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;c1&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;c2&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;c3&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;C-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;e-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;e klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39; E &#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;e2&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;e3&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;E-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;s-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;s klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39; S &#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;S-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;g-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;g klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39; G &#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;G-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;m-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;m klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;ML&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;ml&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;M-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;x-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;x klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;X-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;r-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;r klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39; r &#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;R-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;v-klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;v klasse&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39; v &#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;viano&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;V-Klasse&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;marco polo&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;marco&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;polo&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;MarcoPolo&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;cla&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;CLA&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;clc&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;CLC&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;clk&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;CLK&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;cl&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;CL&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;cls&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;CLS&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;sl&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;SL&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;slc&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;SLC&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;slk&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;SLK&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;slr&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;SLR&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;sls&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;SLS&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;gla&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;GLA&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;glb&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;GLB&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;glc&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;GLC&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;glk&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;GLK&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;gle&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;GLE&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;gls&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;GLS&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;gl&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;GL&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;GT&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;GT&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;vaneo&#39;</span> <span class="ow">in</span> <span class="n">xl</span> <span class="ow">or</span> <span class="s1">&#39;citan&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;Vaneo&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;vito&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;Vito&#39;</span>
-    
+
     <span class="k">elif</span> <span class="s1">&#39;sprinter&#39;</span> <span class="ow">in</span> <span class="n">xl</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;Sprinter&#39;</span>
-    
+
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;OTHER&#39;</span>
 </pre></div>
@@ -1371,19 +1376,19 @@ Name: Model, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-21-d1240cbb6fbc&gt;:1: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-21-d1240cbb6fbc&gt;:1: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   df_int[&#39;hubraum&#39;] = df_int[&#39;hubraum&#39;].replace(-1, np.nan)
-&lt;ipython-input-21-d1240cbb6fbc&gt;:2: SettingWithCopyWarning: 
+&lt;ipython-input-21-d1240cbb6fbc&gt;:2: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   df_str[&#39;hubraum&#39;] = df_str[&#39;hubraum&#39;].str.replace(&#39; cm³&#39;, &#39;&#39;)
-&lt;ipython-input-21-d1240cbb6fbc&gt;:3: SettingWithCopyWarning: 
+&lt;ipython-input-21-d1240cbb6fbc&gt;:3: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1689,24 +1694,24 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 1414 entries, 0 to 1409
 Data columns (total 16 columns):
- #   Column              Non-Null Count  Dtype  
----  ------              --------------  -----  
- 0   carname             1414 non-null   object 
+ #   Column              Non-Null Count  Dtype
+---  ------              --------------  -----
+ 0   carname             1414 non-null   object
  1   price               1414 non-null   float64
  2   milage              1414 non-null   float64
  3   hubraum             1085 non-null   float64
- 4   power               1414 non-null   object 
- 5   fuel_type           1414 non-null   object 
- 6   transmission        1414 non-null   object 
- 7   construction_year   1414 non-null   int64  
- 8   first_registration  1414 non-null   object 
- 9   num_seats           1414 non-null   int64  
- 10  num_doors           1414 non-null   object 
- 11  emission_class      1414 non-null   object 
- 12  car_type            1414 non-null   object 
- 13  num_owners          1414 non-null   int64  
- 14  damage              1414 non-null   object 
- 15  Model               1414 non-null   object 
+ 4   power               1414 non-null   object
+ 5   fuel_type           1414 non-null   object
+ 6   transmission        1414 non-null   object
+ 7   construction_year   1414 non-null   int64
+ 8   first_registration  1414 non-null   object
+ 9   num_seats           1414 non-null   int64
+ 10  num_doors           1414 non-null   object
+ 11  emission_class      1414 non-null   object
+ 12  car_type            1414 non-null   object
+ 13  num_owners          1414 non-null   int64
+ 14  damage              1414 non-null   object
+ 15  Model               1414 non-null   object
 dtypes: float64(3), int64(3), object(10)
 memory usage: 220.1+ KB
 </pre></div>
@@ -2034,7 +2039,7 @@ Name: fuel_type, dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fueltype</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;-1&#39;</span><span class="p">:</span>
-        
+
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -2099,26 +2104,26 @@ Name: fuel_type, dtype: int64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 1414 entries, 0 to 1409
 Data columns (total 18 columns):
- #   Column              Non-Null Count  Dtype  
----  ------              --------------  -----  
- 0   carname             1414 non-null   object 
+ #   Column              Non-Null Count  Dtype
+---  ------              --------------  -----
+ 0   carname             1414 non-null   object
  1   price               1414 non-null   float64
  2   milage              1414 non-null   float64
  3   hubraum             1085 non-null   float64
- 4   power               1414 non-null   object 
- 5   fuel_type           1407 non-null   object 
- 6   transmission        1406 non-null   object 
- 7   construction_year   1414 non-null   int64  
- 8   first_registration  1414 non-null   object 
- 9   num_seats           1414 non-null   int64  
- 10  num_doors           1414 non-null   object 
- 11  emission_class      1414 non-null   object 
- 12  car_type            1414 non-null   object 
- 13  num_owners          1414 non-null   int64  
- 14  damage              1414 non-null   object 
- 15  Model               1414 non-null   object 
- 16  power_ps            1399 non-null   object 
- 17  power_kw            1399 non-null   object 
+ 4   power               1414 non-null   object
+ 5   fuel_type           1407 non-null   object
+ 6   transmission        1406 non-null   object
+ 7   construction_year   1414 non-null   int64
+ 8   first_registration  1414 non-null   object
+ 9   num_seats           1414 non-null   int64
+ 10  num_doors           1414 non-null   object
+ 11  emission_class      1414 non-null   object
+ 12  car_type            1414 non-null   object
+ 13  num_owners          1414 non-null   int64
+ 14  damage              1414 non-null   object
+ 15  Model               1414 non-null   object
+ 16  power_ps            1399 non-null   object
+ 17  power_kw            1399 non-null   object
 dtypes: float64(3), int64(3), object(12)
 memory usage: 242.2+ KB
 </pre></div>
@@ -2655,24 +2660,24 @@ Name: fuel_type, dtype: int64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 1414 entries, 0 to 1409
 Data columns (total 16 columns):
- #   Column          Non-Null Count  Dtype  
----  ------          --------------  -----  
- 0   carname         1414 non-null   object 
+ #   Column          Non-Null Count  Dtype
+---  ------          --------------  -----
+ 0   carname         1414 non-null   object
  1   price           1414 non-null   float64
  2   milage          1414 non-null   float64
  3   hubraum         1085 non-null   float64
- 4   fuel_type       1407 non-null   object 
- 5   transmission    1406 non-null   object 
- 6   num_seats       1043 non-null   object 
- 7   num_doors       1098 non-null   object 
- 8   emission_class  1027 non-null   object 
- 9   car_type        1414 non-null   object 
- 10  num_owners      933 non-null    object 
- 11  Model           1414 non-null   object 
- 12  power_ps        1399 non-null   object 
- 13  power_kw        1399 non-null   object 
+ 4   fuel_type       1407 non-null   object
+ 5   transmission    1406 non-null   object
+ 6   num_seats       1043 non-null   object
+ 7   num_doors       1098 non-null   object
+ 8   emission_class  1027 non-null   object
+ 9   car_type        1414 non-null   object
+ 10  num_owners      933 non-null    object
+ 11  Model           1414 non-null   object
+ 12  power_ps        1399 non-null   object
+ 13  power_kw        1399 non-null   object
  14  age             1414 non-null   float64
- 15  schaden         677 non-null    object 
+ 15  schaden         677 non-null    object
 dtypes: float64(4), object(12)
 memory usage: 220.1+ KB
 </pre></div>
@@ -2972,12 +2977,12 @@ memory usage: 220.1+ KB
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 1414 entries, 0 to 1409
 Data columns (total 16 columns):
- #   Column          Non-Null Count  Dtype   
----  ------          --------------  -----   
- 0   carname         1414 non-null   object  
- 1   price           1414 non-null   float64 
- 2   milage          1414 non-null   float64 
- 3   hubraum         1085 non-null   float64 
+ #   Column          Non-Null Count  Dtype
+---  ------          --------------  -----
+ 0   carname         1414 non-null   object
+ 1   price           1414 non-null   float64
+ 2   milage          1414 non-null   float64
+ 3   hubraum         1085 non-null   float64
  4   fuel_type       1407 non-null   category
  5   transmission    1406 non-null   category
  6   num_seats       1043 non-null   category
@@ -2986,9 +2991,9 @@ Data columns (total 16 columns):
  9   car_type        1414 non-null   category
  10  num_owners      933 non-null    category
  11  Model           1414 non-null   category
- 12  power_ps        1399 non-null   float64 
- 13  power_kw        1399 non-null   float64 
- 14  age             1414 non-null   float64 
+ 12  power_ps        1399 non-null   float64
+ 13  power_kw        1399 non-null   float64
+ 14  age             1414 non-null   float64
  15  schaden         677 non-null    category
 dtypes: category(9), float64(6), object(1)
 memory usage: 136.0+ KB
@@ -3167,7 +3172,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original x: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original x:
  [[1.695e+04 2.143e+00]
  [6.049e+04 1.950e+00]
  [2.499e+04 1.332e+00]
@@ -3175,7 +3180,7 @@ dtype: int64
  [3.600e+04       nan]
  [3.390e+04       nan]
  [2.240e+04       nan]]
-Deterministic Regression Imputation of x: 
+Deterministic Regression Imputation of x:
  [[1.69500000e+04 2.14300000e+00]
  [6.04900000e+04 1.95000000e+00]
  [2.49900000e+04 1.33200000e+00]
@@ -3249,12 +3254,12 @@ Deterministic Regression Imputation of x:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 1085 entries, 0 to 1408
 Data columns (total 16 columns):
- #   Column          Non-Null Count  Dtype   
----  ------          --------------  -----   
- 0   carname         1085 non-null   object  
- 1   price           1085 non-null   float64 
- 2   milage          1085 non-null   float64 
- 3   hubraum         1085 non-null   float64 
+ #   Column          Non-Null Count  Dtype
+---  ------          --------------  -----
+ 0   carname         1085 non-null   object
+ 1   price           1085 non-null   float64
+ 2   milage          1085 non-null   float64
+ 3   hubraum         1085 non-null   float64
  4   fuel_type       1084 non-null   category
  5   transmission    1081 non-null   category
  6   num_seats       1028 non-null   category
@@ -3263,9 +3268,9 @@ Data columns (total 16 columns):
  9   car_type        1085 non-null   category
  10  num_owners      921 non-null    category
  11  Model           1085 non-null   category
- 12  power_ps        1084 non-null   float64 
- 13  power_kw        1084 non-null   float64 
- 14  age             1085 non-null   float64 
+ 12  power_ps        1084 non-null   float64
+ 13  power_kw        1084 non-null   float64
+ 14  age             1085 non-null   float64
  15  schaden         666 non-null    category
 dtypes: category(9), float64(6), object(1)
 memory usage: 80.3+ KB
@@ -3526,12 +3531,12 @@ dtype: int64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 900 entries, 0 to 1408
 Data columns (total 15 columns):
- #   Column          Non-Null Count  Dtype   
----  ------          --------------  -----   
- 0   carname         900 non-null    object  
- 1   price           900 non-null    float64 
- 2   milage          900 non-null    float64 
- 3   hubraum         900 non-null    float64 
+ #   Column          Non-Null Count  Dtype
+---  ------          --------------  -----
+ 0   carname         900 non-null    object
+ 1   price           900 non-null    float64
+ 2   milage          900 non-null    float64
+ 3   hubraum         900 non-null    float64
  4   fuel_type       900 non-null    category
  5   transmission    900 non-null    category
  6   num_seats       900 non-null    category
@@ -3540,9 +3545,9 @@ Data columns (total 15 columns):
  9   car_type        900 non-null    category
  10  num_owners      900 non-null    category
  11  Model           900 non-null    category
- 12  power_ps        900 non-null    float64 
- 13  power_kw        900 non-null    float64 
- 14  age             900 non-null    float64 
+ 12  power_ps        900 non-null    float64
+ 13  power_kw        900 non-null    float64
+ 14  age             900 non-null    float64
 dtypes: category(8), float64(6), object(1)
 memory usage: 66.1+ KB
 </pre></div>
@@ -3581,10 +3586,10 @@ memory usage: 66.1+ KB
     <script>kernelName = 'python3'</script>
 
               </div>
-              
-        
+
+
             <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="webscraper_mobile.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -3600,15 +3605,15 @@ memory usage: 66.1+ KB
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+
         </div>
     </div>
     <footer class="footer">
     <div class="container">
       <p>
-        
+
           Durch Cenk Yagkan<br/>
-        
+
             &copy; Urheberrechte © Cenk Yagkan 2021.<br/>
       </p>
     </div>
@@ -3618,7 +3623,7 @@ memory usage: 66.1+ KB
 
       </div>
     </div>
-  
+
   <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
